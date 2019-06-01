@@ -7,7 +7,7 @@ namespace SistemaVendasAspNetCore.Uteis
     public class DAL
     {
         private static string Server = "localhost";
-        private static string Database = "sistema_aspnetcore_venda";
+        private static string Database = "sistema_venda";
         private static string User = "root";
         private static string Passwrod = "1234";
         private static string ConnectionString = $"Server={Server}; Database={Database}; Uid={User}; Pwd={Passwrod}; Sslmode=none; Charset=utf8;";
