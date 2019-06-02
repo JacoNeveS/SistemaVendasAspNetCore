@@ -39,7 +39,6 @@ namespace SistemaVendasAspNetCore.Controllers
         public IActionResult ExcluirCliente(int id)
         {
             new ClienteModel().Excluir(id);
-            ViewData["IdExcluir"] = id;
             return View();
         }
     }

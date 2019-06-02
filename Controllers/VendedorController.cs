@@ -15,7 +15,7 @@ namespace SistemaVendasAspNetCore.Controllers
         public IActionResult Cadastro(int? id)
         {
             if (id != null){
-                //Carregar o registro do cliente em uma viewbag.
+                //Carregar o registro do vendedor em uma viewbag.
                 ViewBag.Vendedor = new VendedorModel().RetornarVendedor(id);
             }
             return View();
@@ -39,7 +39,6 @@ namespace SistemaVendasAspNetCore.Controllers
         public IActionResult ExcluirVendedor(int id)
         {
             new VendedorModel().Excluir(id);
-            ViewData["IdExcluir"] = id;
             return View();
         }
     }

@@ -12,8 +12,8 @@ namespace SistemaVendasAspNetCore.Models
         public string Nome { get; set; }
         [Required(ErrorMessage = "Informe o E-mail!")]
         [DataType(DataType.EmailAddress)]
+        [EmailAddress(ErrorMessage = "O E-mail informado é inválido!")]
         public string Email { get; set; }
-        [Required(ErrorMessage = "Informe a Senha!")]
         public string Senha { get; set; }
 
         public List<VendedorModel> ListarTodosVendedores()
@@ -21,7 +21,7 @@ namespace SistemaVendasAspNetCore.Models
             List<VendedorModel> lista = new List<VendedorModel>();
             VendedorModel item;
             DAL objDAL = new DAL();
-            string sql = "SELECT id, nome, email, senha FROM vendedor ORDER BY nome ASC;";
+            string sql = "SELECT id, nome, email, senha FROM vendedor ORDER BY nome ASC";
             DataTable dt = objDAL.RetDataTable(sql);
 
             for (int i = 0; i < dt.Rows.Count; i++)
@@ -31,7 +31,7 @@ namespace SistemaVendasAspNetCore.Models
                     Id = dt.Rows[i]["id"].ToString(),
                     Nome = dt.Rows[i]["nome"].ToString(),
                     Email = dt.Rows[i]["email"].ToString(),
-                    Senha = dt.Rows[i]["senha"].ToString(),
+                    Senha = dt.Rows[i]["senha"].ToString()
                 };
                 lista.Add(item);
             }
@@ -42,7 +42,7 @@ namespace SistemaVendasAspNetCore.Models
         {
             VendedorModel item;
             DAL objDAL = new DAL();
-            string sql = $"SELECT id, nome, email, senha FROM vendedor WHERE id ='{id}'  ORDER BY nome ASC;";
+            string sql = $"SELECT id, nome, email, senha FROM vendedor WHERE id ='{id}'  ORDER BY nome ASC";
             DataTable dt = objDAL.RetDataTable(sql);
 
             item = new VendedorModel
@@ -50,7 +50,7 @@ namespace SistemaVendasAspNetCore.Models
                 Id = dt.Rows[0]["id"].ToString(),
                 Nome = dt.Rows[0]["nome"].ToString(),
                 Email = dt.Rows[0]["email"].ToString(),
-                Senha = dt.Rows[0]["senha"].ToString(),
+                Senha = dt.Rows[0]["senha"].ToString()
             };
 
             return item;
@@ -62,11 +62,11 @@ namespace SistemaVendasAspNetCore.Models
             string sql = string.Empty;
             if (Id != null)
             {
-                sql = $"UPDATE vendedor SET nome='{Nome}', email='{Email}' WHERE id='{Id}';";
+                sql = $"UPDATE vendedor SET nome='{Nome}', email='{Email}' WHERE id='{Id}'";
             }
             else
             {
-                sql = $"INSERT INTO vendedor(nome, email, senha) VALUES ('{Nome}, '{Email}', '1234');";
+                sql = $"INSERT INTO vendedor(nome, email, senha) VALUES ('{Nome}', '{Email}', '1234')";
             }
             objDAL.ExecutarComandoSQL(sql);
         }
