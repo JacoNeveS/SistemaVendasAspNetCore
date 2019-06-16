@@ -82,3 +82,7 @@ C:\Users\jacol\source\repos\SistemaVendasAspNetCore\obj\Debug\netcoreapp2.1\Sist
 C:\Users\jacol\source\repos\SistemaVendasAspNetCore\obj\Debug\netcoreapp2.1\SistemaVendasAspNetCore.dll
 C:\Users\jacol\source\repos\SistemaVendasAspNetCore\obj\Debug\netcoreapp2.1\SistemaVendasAspNetCore.pdb
 C:\Users\jacol\source\repos\SistemaVendasAspNetCore\obj\Debug\netcoreapp2.1\SistemaVendasAspNetCore.csproj.CopyComplete
+C:\Users\jacol\source\repos\SistemaVendasAspNetCore\obj\Debug\netcoreapp2.1\Razor\Views\Produto\Cadastro.g.cshtml.cs
+C:\Users\jacol\source\repos\SistemaVendasAspNetCore\obj\Debug\netcoreapp2.1\Razor\Views\Produto\Excluir.g.cshtml.cs
+C:\Users\jacol\source\repos\SistemaVendasAspNetCore\obj\Debug\netcoreapp2.1\Razor\Views\Produto\ExcluirProduto.g.cshtml.cs
+C:\Users\jacol\source\repos\SistemaVendasAspNetCore\obj\Debug\netcoreapp2.1\Razor\Views\Produto\Index.g.cshtml.cs
