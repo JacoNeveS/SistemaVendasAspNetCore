@@ -1,6 +1,7 @@
 ﻿using SistemaVendasAspNetCore.Uteis;
 using System.ComponentModel.DataAnnotations;
 using System.Data;
+using MySql.Data.MySqlClient;
 
 namespace SistemaVendasAspNetCore.Models
 {
@@ -19,9 +20,13 @@ namespace SistemaVendasAspNetCore.Models
 
         public bool ValidarLogin()
         {
-            string sql = $"SELECT id, nome FROM vendedor WHERE email='{Email}' AND senha='{Senha}'";
+            string sql = $"SELECT id, nome FROM vendedor WHERE email=@email AND senha=@senha";
+            MySqlCommand Command = new MySqlCommand();
+            Command.CommandText = sql;
+            Command.Parameters.AddWithValue("@email", Email);
+            Command.Parameters.AddWithValue("@senha", Senha);
             DAL objDAL = new DAL();
-            DataTable dt = objDAL.RetDataTable(sql);
+            DataTable dt = objDAL.RetDataTable(Command);
             if (dt.Rows.Count == 1)
             {
                 Id = dt.Rows[0]["id"].ToString();

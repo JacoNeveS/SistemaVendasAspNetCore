@@ -66,9 +66,9 @@ using SistemaVendasAspNetCore.Models;
             WriteLiteral("<div class=\"row\" style=\"text-align:center\">\r\n    <div class=\"col-lg-3\">\r\n        <div class=\"row\">\r\n            ");
             EndContext();
             BeginContext(112, 90, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "419de00a31a541569af7f8c60a0ac380", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f82841abd1fe4da9ae10c434442e80bb", async() => {
                 BeginContext(138, 60, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "b31f7cc693f54694b4d726af25ac561a", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "54ecdf5e90d34c40b9ca45d3386910f1", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -101,9 +101,9 @@ using SistemaVendasAspNetCore.Models;
             WriteLiteral("\r\n        </div>\r\n        <label>Cadastro de Clientes</label>\r\n    </div>\r\n    <div class=\"col-lg-3\">\r\n        <div class=\"row\">\r\n            ");
             EndContext();
             BeginContext(344, 93, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f2d953a047d84a439d061ee80fb682f3", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "4832cc5ced10464b821d1a7dbb45c0b1", async() => {
                 BeginContext(371, 62, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "b6ab189d325e4234929fdd2c5fab359b", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "f093e30c2d9646b5a4cbae4dc95fa907", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -136,9 +136,9 @@ using SistemaVendasAspNetCore.Models;
             WriteLiteral("\r\n        </div>\r\n        <label>Cadastro de Vendedores</label>\r\n    </div>\r\n    <div class=\"col-lg-3\">\r\n        <div class=\"row\">\r\n            ");
             EndContext();
             BeginContext(581, 90, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "1f4f24f04ef5453e94f4e46b40b95cf2", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "8d74dee1993a4f2abc5d11f5b5f45b20", async() => {
                 BeginContext(607, 60, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "a1efab0e345245b6b848266c9c7ae8a2", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "fe3d586488604bae93162247692843a5", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -171,9 +171,9 @@ using SistemaVendasAspNetCore.Models;
             WriteLiteral("\r\n        </div>\r\n        <label>Cadastro de Produtos</label>\r\n    </div>\r\n</div>\r\n<br />\r\n<div class=\"row\" style=\"text-align:center\">\r\n    <div class=\"col-lg-3\">\r\n        <div class=\"row\">\r\n            ");
             EndContext();
             BeginContext(874, 86, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "a93938ee759647e99392e0668b0f7f27", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "07be27bf7c7b46dfb9d1f6a32ed80137", async() => {
                 BeginContext(898, 58, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "7e4e85c9b12e4b109d2ba840669b7b88", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "1990c7fb964b43449cb4bba319828eae", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -206,9 +206,9 @@ using SistemaVendasAspNetCore.Models;
             WriteLiteral("\r\n</div>\r\n        <label>Registro de Vendas</label>\r\n    </div>\r\n    <div class=\"col-lg-3\">\r\n        <div class=\"row\">\r\n            ");
             EndContext();
             BeginContext(1092, 94, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "57beaf988e2248b09ecefb1df48875e4", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "84bfd97ddc244cf0bf3c14efc34efd3d", async() => {
                 BeginContext(1120, 62, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "774f14392cfb4f1badb86ec0d445a72b", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "96a74a79b53d415495b4e190390ab764", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -241,7 +241,7 @@ using SistemaVendasAspNetCore.Models;
             WriteLiteral("\r\n</div>\r\n        <label>Relatórios</label>\r\n    </div>\r\n    <div class=\"col-lg-3\">\r\n        <div class=\"row\">\r\n            ");
             EndContext();
             BeginContext(1310, 65, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "9a012f4ec9e74ec38951cf9014253b97", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "ff2cbf73857a47f1ad500f0552f46aee", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
