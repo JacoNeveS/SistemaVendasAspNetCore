@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using SistemaVendasAspNetCore.Models;
 
@@ -9,6 +10,12 @@ namespace SistemaVendasAspNetCore.Controllers
 {
     public class VendaController : Controller
     {
+        private IHttpContextAccessor httpContext;
+        public VendaController(IHttpContextAccessor HttpContextAccessor)
+        {
+            httpContext = HttpContextAccessor;
+        }
+
         [HttpGet]
         public IActionResult Index()
         {
@@ -25,6 +32,8 @@ namespace SistemaVendasAspNetCore.Controllers
         [HttpPost]
         public IActionResult Registrar(VendaModel venda)
         {
+            //Pega ID do Vendedor logado.
+            venda.Vendedor_Id = httpContext.HttpContext.Session.GetString("IdUsuarioLogado");
             venda.Inserir();
             CarregarDados();
             return View();

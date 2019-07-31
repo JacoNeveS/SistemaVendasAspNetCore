@@ -1,10 +1,13 @@
 ﻿<h3>Lista de Vendedores</h3>
-
+<br />
+<button class="btn btn-block btn-default" type="button" onclick="Voltar()">Voltar</button>
+<button class="btn btn-block btn-primary" type="button" onclick="Cadastrar()">Cadastrar Vendedor</button>
+<br />
 <table class="table table-bordered">
     <thead>
         <tr>
-            <th>#</th>
-            <th>#</th>
+            <th></th>
+            <th></th>
             <th>Id</th>
             <th>Nome</th>
             <th>Email</th>
@@ -26,8 +29,6 @@
         }
     </tbody>
 </table>
-<br />
-<button class="btn btn-block btn-primary" type="button" onclick="Cadastrar()">Cadastrar Vendedor</button>
 
 <script>
     function Cadastrar() {
@@ -38,5 +39,8 @@
     }
     function Excluir(id) {
         window.location.href = "../Vendedor/Excluir/" + id;
+    }
+    function Voltar() {
+        window.location.href = '../../Home/Menu';
     }
 </script>
