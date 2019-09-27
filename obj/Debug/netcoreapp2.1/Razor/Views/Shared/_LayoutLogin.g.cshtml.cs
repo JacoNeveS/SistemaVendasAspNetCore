@@ -57,7 +57,7 @@ using SistemaVendasAspNetCore.Models;
             WriteLiteral("<!DOCTYPE html>\r\n<html>\r\n");
             EndContext();
             BeginContext(25, 2080, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("head", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "e4281f9cdaf24ccda5b2e366acf41a3e", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("head", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "1edd9d8152334ee28b6ab2dff80ce10f", async() => {
                 BeginContext(31, 287, true);
                 WriteLiteral(@"
     <meta charset=""utf-8"" />
@@ -68,7 +68,7 @@ using SistemaVendasAspNetCore.Models;
     ");
                 EndContext();
                 BeginContext(318, 75, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("link", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "3730ea0b762a44d3961ac45def5d60fc", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("link", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "a40480887a3741a88061f497a3186afb", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -178,7 +178,7 @@ using SistemaVendasAspNetCore.Models;
             WriteLiteral("\r\n");
             EndContext();
             BeginContext(2107, 124, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "a98acb7ea64f49a8aac770671ff94a74", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "4ae1470b82c34ff69635bbc7af31f5ce", async() => {
                 BeginContext(2113, 84, true);
                 WriteLiteral("    \r\n    <div class=\"container body-content\" style=\"padding-top: 100px;\">\r\n        ");
                 EndContext();
