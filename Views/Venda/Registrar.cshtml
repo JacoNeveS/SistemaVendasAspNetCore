@@ -3,11 +3,25 @@
 <h2>Registrar uma Venda</h2>
 
 <form asp-controller="Venda" asp-action="Registrar">
+    @*<input type="hidden" asp-for="Id" value="@try{ @ViewBag.Venda.Id } catch { }" />*@
+
     <div class="form-group">
         <label>Cliente</label>
         <select asp-for="Cliente_Id" class="form-control">
             @{
                 foreach (var item in (List<ClienteModel>)ViewBag.ListaClientes)
+                {
+                    <option value="@item.Id">@item.Nome</option>
+                }
+            }
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label>Vendedor</label>
+        <select asp-for="Vendedor_Id" class="form-control">
+            @{
+                foreach (var item in (List<VendedorModel>)ViewBag.ListaVendedores)
                 {
                     <option value="@item.Id">@item.Nome</option>
                 }
@@ -22,7 +36,7 @@
                 @{
                     foreach (var item in (List<ProdutoModel>)ViewBag.ListaProdutos)
                     {
-                        <option value="@item.Id">@item.Nome | @item.Preco_Unitario | @item.Preco_Venda</option>
+                        <option value="@item.Id">@item.Nome | @item.Preco_Unitario</option>
                     }
                 }
             </select>
@@ -44,9 +58,7 @@
                 <td>Nome</td>
                 <td>Quantidade</td>
                 <td>Preço Unitário</td>
-                <td>Preço Venda</td>
                 <td>Total</td>
-                <td>Lucro</td>
             </tr>
         </thead>
         <tbody id="listaProdutos"></tbody>
@@ -55,19 +67,13 @@
     <div style="float:left; font-size:22px;">Total: R$</div>
     <div style="float:left; font-size:22px; margin-left:5px" id="divTotal">0.00</div>
     <input type="hidden" asp-for="Total" id="txtTotal" />
-    <br />
-    <div style="float:left; font-size:22px;">Lucro: R$</div>
-    <div style="float:left; font-size:22px; margin-left:5px" id="divTotalLucro">0.00</div>
-    <input type="hidden" asp-for="Lucro" id="txtLucro" />
 
     <br />
 
     <textarea asp-for="ListaProdutos" id="ListaProdutosJSON" style="display:none;"></textarea>
 
-    <br />
-    <button class="btn btn-block btn-default" type="button" onclick="Voltar()">Voltar</button>
     <button type="submit" class="btn btn-block btn-success">Registrar</button>
-    <br />
+    <button type="button" class="btn btn-block btn-primary" onclick="Voltar()">Listagem de Vendas</button>
 </form>
 
 <script>
@@ -78,8 +84,6 @@
     var QtdeProduto = document.getElementById("txtQuantidade");
     var ListaProdutos = document.getElementById("listaProdutos");
     var TotalVenda = document.getElementById("divTotal");
-    var TotalVendaLucro = document.getElementById("divTotalLucro");
-    var txtLucro = document.getElementById("txtLucro");
     var txtTotal = document.getElementById("txtTotal");
     var ListaProdutosJSON = document.getElementById("ListaProdutosJSON");
 
@@ -88,23 +92,20 @@
     }
 
     function AdicionarProduto() {
+
         var DescricaoPreco = CodigoProduto.options[CodigoProduto.selectedIndex].text;
         var arrayDescricaoPreco = DescricaoPreco.split('|');
-        //TotalGeral
-        var total = (arrayDescricaoPreco[2].replace(",", ".") * QtdeProduto.value);
+        var total = (arrayDescricaoPreco[1].replace(",", ".") * QtdeProduto.value);
         total = Math.round(total * 100) / 100;
-        //TotalLucro
-        var lucro = (total - (arrayDescricaoPreco[1].replace(",", ".") * QtdeProduto.value));
-        lucro = Math.round(lucro * 100) / 100;
-        
+
+        //alert(arrayDescricaoPreco[1]);
+
         Itens.Produtos.push({
             "CodigoProduto": CodigoProduto.value,
             "DescricaoProduto": arrayDescricaoPreco[0],
             "QtdeProduto": QtdeProduto.value,
             "PrecoUnitario": arrayDescricaoPreco[1],
-            "PrecoVenda": arrayDescricaoPreco[2],
-            "Total": total,
-            "Lucro": lucro
+            "Total": total
         });
 
         ListaProdutosJSON.innerHTML = JSON.stringify(Itens.Produtos);
@@ -114,17 +115,12 @@
             "<td>" + arrayDescricaoPreco[0] + "</td>" +
             "<td>" + QtdeProduto.value + "</td>" +
             "<td> R$" + arrayDescricaoPreco[1] + "</td>" +
-            "<td> R$" + arrayDescricaoPreco[2] + "</td>" +
             "<td> R$ " + total + "</td>" +
-            "<td> R$ " + lucro + "</td>" +
             "</tr>";
 
         ListaProdutos.innerHTML += produto;
         var totalGeral = Math.round((TotalVenda.innerText * 1 + total) * 100) / 100;
         TotalVenda.innerHTML = totalGeral;
-        var totalGeralLucro = Math.round((TotalVendaLucro.innerText * 1 + lucro) * 100) / 100;
-        TotalVendaLucro.innerHTML = totalGeralLucro;
         txtTotal.value = totalGeral.toString().replace(".", ",");
-        txtLucro.value = totalGeralLucro.toString().replace(".", ",");
     }
 </script>

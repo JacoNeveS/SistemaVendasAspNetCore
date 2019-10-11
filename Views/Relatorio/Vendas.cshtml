@@ -10,10 +10,8 @@
     <div class="form-group">
         <input asp-for="DataAte" type="date" class="form-control" />
     </div>
-    <br />
-    <button class="btn btn-block btn-default" type="button" onclick="Voltar()">Voltar</button>
+
     <button type="submit" class="btn btn-block btn-success">Pesquisar</button>
-    <br />
 </form>
 
 <br />
@@ -25,7 +23,6 @@
             <th>Data</th>
             <th>Vendedor</th>
             <th>Cliente</th>
-            <th>Lucro</th>
             <th>Total</th>
         </tr>
     </thead>
@@ -41,7 +38,6 @@
                     <td>@item.Data</td>
                     <td>@item.Vendedor_Id</td>
                     <td>@item.Cliente_Id</td>
-                    <td>R$ @item.Lucro</td>
                     <td>R$ @item.Total</td>
                 </tr>
 
@@ -51,9 +47,3 @@
         }
     </tbody>
 </table>
-
-<script>
-    function Voltar() {
-        window.location.href = '../../Relatorio/Index';
-    }
-</script>
