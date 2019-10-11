@@ -28,7 +28,7 @@
                 </button>
                 <a asp-area="" asp-controller="Home" asp-action="Menu" class="navbar-brand">SistemaVendasAspNetCore</a>
             </div>
-            <div class="navbar-collapse collapse" style="float:right">
+            <div class="navbar-collapse collapse">
                 @*<ul class="nav navbar-nav">
                     <li><a asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
                     <li><a asp-area="" asp-controller="Home" asp-action="About">About</a></li>
@@ -37,7 +37,7 @@
                 </ul>*@
                 @using Microsoft.AspNetCore.Http
                 @inject IHttpContextAccessor HttpContextAccessor
-                <div id="NomeUsuarioLogado" ></div>
+                <div id="NomeUsuarioLogado"></div>
             </div>
         </div>
     </nav>
@@ -47,7 +47,7 @@
     <div class="container body-content">
         @RenderBody()
         <hr />
-        <footer style="text-align:center">
+        <footer>
             <p>&copy; 2019 - SistemaVendasAspNetCore</p>
         </footer>
     </div>

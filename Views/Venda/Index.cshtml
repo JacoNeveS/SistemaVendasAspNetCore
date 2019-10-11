@@ -1,8 +1,5 @@
 ﻿<h2>Listagem de Vendas</h2>
-<br />
-<button class="btn btn-block btn-default" type="button" onclick="Voltar()">Voltar</button>
-<button class="btn btn-block btn-primary" type="button" onclick="Cadastrar()">Registrar Vendas</button>
-<br />
+
 <table class="table table-bordered">
     <thead>
         <tr>
@@ -10,7 +7,6 @@
             <th>Data</th>
             <th>Vendedor</th>
             <th>Cliente</th>
-            <th>Lucro</th>
             <th>Total</th>
         </tr>
     </thead>
@@ -24,19 +20,17 @@
                     <td>@item.Data</td>
                     <td>@item.Vendedor_Id</td>
                     <td>@item.Cliente_Id</td>
-                    <td>R$ @item.Lucro</td>
                     <td>R$ @item.Total</td>
                 </tr>
             }
         }
     </tbody>
 </table>
+<br />
+<button class="btn btn-block btn-primary" type="button" onclick="Cadastrar()">Registrar Vendas</button>
 
 <script>
     function Cadastrar() {
         window.location.href = "../Venda/Registrar";
-    }
-    function Voltar() {
-        window.location.href = '../../Home/Menu';
     }
 </script>

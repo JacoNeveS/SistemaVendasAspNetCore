@@ -1,7 +1,5 @@
 ﻿<h2>Grafico de Vendas por Produto</h2>
-<br/>
-<button class="btn btn-block btn-default" type="button" onclick="Voltar()">Voltar</button>
-<br />
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.min.js"></script>
 
 <div id="canvas-holder" style="width: 100%">
@@ -32,8 +30,4 @@
         var ctx = document.getElementById('chart-area').getContext('2d');
         window.myPie = new Chart(ctx, config);
     };
-
-    function Voltar() {
-        window.location.href = '../../Relatorio/Index';
-    }
 </script>

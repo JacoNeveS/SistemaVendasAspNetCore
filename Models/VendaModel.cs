@@ -15,7 +15,6 @@ namespace SistemaVendasAspNetCore.Models
         public string Cliente_Id { get; set; }
         public string Vendedor_Id { get; set; }
         public double Total { get; set; }
-        public double Lucro { get; set; }
         public string ListaProdutos { get; set; }
 
         //Filtro de Relatório
@@ -23,17 +22,19 @@ namespace SistemaVendasAspNetCore.Models
         {
             return RetornarListagemVendas(DataDe, DataAte);
         }
+
         //Listagem Geral
         public List<VendaModel> ListagemVendas()
         {
             return RetornarListagemVendas("1900/01/01", "2300/01/01");
         }
+
         public List<VendaModel> RetornarListagemVendas(string DataDe, string DataAte)
         {
             List<VendaModel> lista = new List<VendaModel>();
             VendaModel item;
             DAL objDAL = new DAL();
-            string sql = $"SELECT v1.id, v1.data, v1.total, v1.lucro, v2.nome AS vendedor, c.nome AS cliente FROM venda v1 INNER JOIN vendedor v2 ON v1.vendedor_id = v2.id INNER JOIN cliente c ON v1.cliente_id = c.id WHERE v1.data >='{DataDe}' AND v1.data <='{DataAte}' ORDER BY id";
+            string sql = $"SELECT v1.id, v1.data, v1.total, v2.nome AS vendedor, c.nome AS cliente FROM venda v1 INNER JOIN vendedor v2 ON v1.vendedor_id = v2.id INNER JOIN cliente c ON v1.cliente_id = c.id WHERE v1.data >='{DataDe}' AND v1.data <='{DataAte}' ORDER BY id";
             DataTable dt = objDAL.RetDataTable(sql);
 
             for (int i = 0; i < dt.Rows.Count; i++)
@@ -43,7 +44,6 @@ namespace SistemaVendasAspNetCore.Models
                     Id = dt.Rows[i]["id"].ToString(),
                     Data = DateTime.Parse(dt.Rows[i]["data"].ToString()).ToString("dd/MM/yyyy"),
                     Total = double.Parse(dt.Rows[i]["total"].ToString()),
-                    Lucro = double.Parse(dt.Rows[i]["lucro"].ToString()),
                     Cliente_Id = dt.Rows[i]["cliente"].ToString(),
                     Vendedor_Id = dt.Rows[i]["vendedor"].ToString()
                 };
@@ -51,24 +51,28 @@ namespace SistemaVendasAspNetCore.Models
             }
             return lista;
         }
+
         public List<ClienteModel> RetornarListaClientes()
         {
             return new ClienteModel().ListarTodosClientes();
         }
+
         public List<VendedorModel> RetornarListaVendedores()
         {
             return new VendedorModel().ListarTodosVendedores();
         }
+
         public List<ProdutoModel> RetornarListaProdutos()
         {
             return new ProdutoModel().ListarTodosProdutos();
         }
+
         public void Inserir()
         {
             DAL objDAL = new DAL();
             string dataVenda = DateTime.Now.Date.ToString("yyyy/MM/dd");
-            
-            string sql = $"INSERT INTO venda(data, total, lucro, vendedor_id, cliente_id) VALUES ('{dataVenda}', '{Total.ToString().Replace(",",".")}', '{Lucro.ToString().Replace(",", ".")}', '{Vendedor_Id}', '{Cliente_Id}')";
+
+            string sql = $"INSERT INTO venda(data, total, vendedor_id, cliente_id) VALUES ('{dataVenda}', {Total.ToString().Replace(",",".")}, {Vendedor_Id}, {Cliente_Id})";
             objDAL.ExecutarComandoSQL(sql);
 
             //Recuperar o ID da Venda.
@@ -82,24 +86,6 @@ namespace SistemaVendasAspNetCore.Models
             {
                 sql = $"INSERT INTO itens_venda (venda_id, produto_id, qtde_produto, preco_produto) VALUES ({id_venda}, {lista_produtos[i].CodigoProduto.ToString()}, {lista_produtos[i].QtdeProduto.ToString()}, {lista_produtos[i].PrecoUnitario.ToString().Replace(",",".")})";
                 objDAL.ExecutarComandoSQL(sql);
-
-                //Baixa no Estoque com Impressão PB.
-                if (int.Parse(lista_produtos[i].CodigoProduto.ToString()) == 6)
-                {
-                    sql = $"UPDATE produto SET quantidade_estoque = (quantidade_estoque - {int.Parse(lista_produtos[i].QtdeProduto.ToString())}) WHERE id = 4";
-                    objDAL.ExecutarComandoSQL(sql);
-
-                    sql = $"UPDATE produto SET quantidade_estoque = (quantidade_estoque - {int.Parse(lista_produtos[i].QtdeProduto.ToString())}) WHERE id = 5";
-                    objDAL.ExecutarComandoSQL(sql);
-
-                    sql = $"UPDATE produto SET quantidade_estoque = (quantidade_estoque - {int.Parse(lista_produtos[i].QtdeProduto.ToString())}) WHERE id = 6";
-                    objDAL.ExecutarComandoSQL(sql);
-                } else
-                {
-                    //Baixa no Estoque.
-                    sql = $"UPDATE produto SET quantidade_estoque = (quantidade_estoque - {int.Parse(lista_produtos[i].QtdeProduto.ToString())}) WHERE id = {lista_produtos[i].CodigoProduto.ToString()}";
-                    objDAL.ExecutarComandoSQL(sql);
-                }                
             }            
         }
     }
